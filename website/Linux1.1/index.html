@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Linux">
+        <meta name="description" content="Linux基础使用">
+        <title>MyWeb</title>
+        <!--引用外部css文件-->
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <!-- 引用外部js -->
+        <script type="text/javascript" src="./js/js.js"></script>
+    </head>
+    <body style="background: #dddddd">
+    <div id="div1">
+        <div id="div1_1">
+            <div style="float: left; height: auto; margin: 3px; margin-left: 9px;"><img src="img/penguin.png"></div>
+            <p>Linux Change Our Life!</p>
+        </div>
+            <table id="tb1" border="1" bgcolor="#d3d3d3">
+                <!--border="1" bgcolor="#f0ffff"-->
+                <tr>
+                    <td><a id="td_1" onmouseover="onmouse_1()" onmouseout="outmouse_1()" href="#system_management" style="color:black; text-decoration:none; ">系统管理</a></td>
+                    <td><a id="td_2" onmouseover="onmouse_2()" onmouseout="outmouse_2()" href="#document_management" style="color:black; text-decoration:none; ">文件管理</a></td>
+                    <td><a id="td_3" onmouseover="onmouse_3()" onmouseout="outmouse_3()" href="#disk_management" style="color:black; text-decoration:none; ">磁盘管理</a></td>
+                    <td><a id="td_4" onmouseover="onmouse_4()" onmouseout="outmouse_4()" href="#user_management" style="color:black; text-decoration:none; ">用户管理</a></td>
+                    <td><a id="td_5" onmouseover="onmouse_5()" onmouseout="outmouse_5()" href="#networks_management" style="color:black; text-decoration:none; ">网络管理</a></td>
+                    <td><a id="td_6" onmouseover="onmouse_6()" onmouseout="outmouse_6()" href="#general_tools" style="color:black; text-decoration:none; ">实用工具</a></td>
+                </tr>
+            </table>
+            <div id="div1_2">
+                <!--<h2><a href="./websites/site/index.html" style="color:black; text-decoration:none; ">Linux学习</a></h2>-->
+                <h2><a href="http://107.182.22.249:88/" style="color:black; text-decoration:none; ">Linux笔记</a><hr /></h2>
+                <h3 id="system_management" style="text-indent:1em">系统管理</h3>
+                <ul type="circle">
+                    <li>shutdown  电源管理</li>
+                    <li>halt|poweroff  关机</li>
+                    <li>reboot  重启</li>
+                    <li>$(cmd) | `cmd`  将一个命令的输出打印到另一个命令参数[echo "I am `whoami`"]</li>
+                    <li>
+                        {...}  重复打印字符串的简化形式[touch file{1,2,3}.txt | echo {1..10..2}: 以2为步数打印1至10]<br>
+                        <img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/{...}.png"><br>
+                    </li>
+                    <li>whereis  寻找命令的二进制文件、源文件、手册页</li>
+                    <li>which  显示命令真实路径</li>
+                    <li>whatis  显示目录手册页描述信息</li>
+                    <li>man  查找命令帮助信息</li>
+                    <li>runlevel  显示用户运行级别[init 更改运行级别]</li>
+                    <li>ldd  列出运行文件动态库依赖关系</li>
+                    <li>hexdump  显示文件的16进制格式</li>
+                    <li>enable  启动|关闭shell内置命令<span style="color: red; box-shadow: #c7254e ">[-n 显示所有已禁用的命令][help 可查看已经被关闭的内置命令[名称旁边的星号 (*) 意味着该命令被禁用]]</span></li>
+                    <li>$PS1  默认提示符[$PS1="\[\e[1;32m\][\u@\h \W]\\$\e[0m\]"——设置颜色]</li>
+                    <li>locale  显示当前地区的语言</li>
+                    <li>
+                        echo  [-E (默认)不支持\解释功能][-n 不自动换行][-e 启动\字符的解释功能——echo -e "\a"  响铃]
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/echo.png"><br>
+                    </li>
+                    <li>hwclock  显示硬件[主板]时间</li>
+                    <li>date  管理系统时间</li>
+                    <li>
+                        cal|ncal  显示日期
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/cal.png"><br>
+                    </li>
+                    <li>yes  重复输出字符串</li>
+                    <li>ps -aux  查看系统进程</li>
+                    <li>top  即时查看系统进程</li>
+                    <li>
+                        htop  交互式进程查看
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/htop.gif"><br>
+                    </li>
+                    <li>kill  终止进程</li>
+                    <li>vmstat  查看虚拟内存状况</li>
+                    <li>hash  命令缓存表</li>
+                    <li>mpstat  报告处理器相关统计</li>
+                    <li>uptime  显示系统运行了多久</li>
+                    <li>uname -a  打印系统信息[/proc/version]</li>
+                    <li>hostname  显示主机名</li>
+                    <li>type  显示命令属性[内部命令|外部命令]</li>
+                    <li>crontab  创建定时任务</li>
+                </ul>
+                <h3 id="document_management" style="text-indent:1em">文件管理</h3>
+                <ul type="circle">
+                    <li>cd 切换目录</li>
+                    <li>mv 移动|重命名文件</li>
+                    <li>cp 复制文件</li>
+                    <li>ls | ll  查看当前目录下的文件及子目录</li>
+                    <li>fdisk -l  查看磁盘信息</li>
+                    <li>agedu -s / [分区或文件夹]  查看文件详细占用情况
+                        <ul type="square">
+                            <li>[agedu -w显示相关信息网页页面]</li>
+                            <li>[--address 192.168.1.65:8099  指定IP和端口]</li>
+                            <li>[ --auth none|basic 授权权限[none表示无权限 | basic随机生成密码] ]</li>
+                        </ul>
+                        <img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/agedu.png">
+                    </li>
+                    <li>mkdir  新建文件夹</li>
+                    <li>rm -rf  删除文件[夹][创建名为'-*'的文件，只需将文件路径写全即可——'touch /opt/-a' | 删除文件也是如此 '——rm -rf /opt/-a']</li>
+                    <li>cat  显示文件内容</li>
+                    <li>tac  反向[从最后一行倒序]显示文件内容</li>
+                    <li>nl  显示行号</li>
+                    <li>wc  显示文件的统计信息</li>
+                    <li>uniq  对文本内容进行统计[显示字符的重复次数]</li>
+                    <li>sort  对文件进行排序</li>
+                    <li>more  根据窗口大小，一页一页的显示文件内容</li>
+                    <li>less  和more类似，但其优点可以往前翻页，而且进行可以搜索字符</li>
+                    <li>tail | head  只显示文件最后|开始几行</li>
+                    <li>find  在目录层次结构中搜索文件</li>
+                    <li>file  确定文件类型</li>
+                    <li>crontab  创建定时任务</li>
+                    <li>cmd;cmd;cmd  同时运行多个命令</li>
+                    <li>\ 命令换行符[若命令过长，可换行输入]</li>
+                    <li>lspci [-vvn]  显示系统中所有PCI总线设备或连接到该总线上的所有设备</li>
+                    <li>lshw  显示所有硬件摘要信息</li>
+                    <li>lsscsi 查看SCSI控制器设备的信息【// lscpu lsusb】</li>
+                    <li>lsblk 查看块设备信息【sdb-U盘  sda-硬盘驱动器】</li>
+                    <li>blkid 查看块设备属性</li>
+                    <li>iostat 检测整个CPU与接口设备的输入/输出状态【- CPU 平均负载和磁盘活动】</li>
+                    <li>lsmod 列出系统所用模块 [利用modinfo+module.name查看模块详情]</li>
+                    <li>dmesg 显示内核缓冲信息</li>
+                </ul>
+                <h3 id="disk_management" style="text-indent:1em">磁盘管理</h3>
+                <ul type="circle">
+                    <li>df [df -h]  查看系统磁盘空间使用情况</li>
+                    <li>du -sh  查看目录空间占用情况</li>
+                    <li>free -m  查看系统内存使用情况</li>
+                    <li>du -sh file|directory  查看文件或目录的占用情况</li>
+                    <li>fdisk [-l 显示已挂载的磁盘]  操作磁盘分区</li>
+                    <li>mount  显示挂载的文件系统</li>
+                    <li>iotop 磁盘I/O 监控</li>
+                </ul>
+                <h3 id="user_management" style="text-indent:1em">用户管理</h3>
+                <ul type="circle">
+                    <li>su  切换用户['su -'|'su root'[进入用户家目录|保持当前目录]切换为root用户]</li>
+                    <li>sudo  提升普通用户的权限</li>
+                    <li>visudo  [更改/etc/sudoers ==> 'user ALL=(ALL) ALL ']为普通用户增加sudo权限</li>
+                    <li>getent passwd  显示所有用户列表[/etc/passwd]</li>
+                    <li>usermod  修改用户权限</li>
+                    <li>useradd  新建用户</li>
+                    <li>userdel  删除用户</li>
+                    <li>chage  [-l 显示用户密码过期信息] 更改用户密码过期信息</li>
+                    <li>passwd  更改用户密码[-l|u 锁定[即禁止其登录]|解锁用户][]</li>
+                    <li>last  显示最近用户登良路信息</li>
+                    <li>lastlog  显示每个用户的最近一次登录信息[/var/log/lastlog]</li>
+                    <li>logname  当前登录用户</li>
+                    <li>'who am i'|'whoami'  查看当前用户</li>
+                    <li>who | w  查看当前时间的所有登录用户</li>
+                    <li>id  打印用户真实信息</li>
+                    <li>tty  显示当前所属终端</li>
+                    <li>chvt  更改所在终端</li>
+                </ul>
+                <h3 id="networks_management" style="text-indent:1em">网络管理</h3>
+                <ul type="circle">
+                    <li>ifconfig  查看网络信息[需安装'net-tools'|'ip address']</li>
+                    <li>netsat [-antlp]  查看连接网络信息</li>
+                    <li>nmtui  可视化控制工具[*CentOS]</li>
+                    <li>nmcli  命令行网络管理工具[*CentOS]</li>
+                    <li>ssh user_name@host  #ssh连接远程主机</li>
+                    <li>scp [源文件] [目标地址]  [【scp -P 36073  nginx-1.14.0.tar.gz  root@107.182.22.249:/home】 使用ssh协议在两台主机之间传送文件</li>
+                    <li>nethogs  即时流量查看</li>
+                    <li>systemctl  系统服务管理</li>
+                    <li>pidstat 报告Linux任务的统计数据</li>
+                </ul>
+                <h3 id="general_tools" style="text-indent:1em">实用工具</h3>
+                <ul type="circle">
+                    <li>
+                        curl http://wttr.in  【curl wttr.in/Guangzhou可选择地名】获取当前位置的天气预报信息
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="img/wttr.in_tool_for_weather.gif"><br>
+                    </li>
+                    <li>
+                        bc  终端计算器
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/bc.png"><br>
+                    </li>
+                    <li>
+                        nmon  Linux资源查看器
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/nmon.gif"><br>
+                    </li>
+                    <li>
+                        slurm -i ens33  即时网络查看
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/slurm.gif"><br>
+                    </li>
+                    <li>
+                        ncdu  内存资源查看器
+                        <br><img style="box-shadow: 3px 3px 20px rgba(0,0,0,.7)" src="./img/ncdu.gif"><br>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

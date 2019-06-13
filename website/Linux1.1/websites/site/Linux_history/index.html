@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../favicon2.ico">
+        
+        <title>Linux历史命令 - 我的网页</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">我的网页</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">VIM使用技巧</a>
+                            </li>
+                            <li >
+                                <a href="../Markdown/">Markdown</a>
+                            </li>
+                            <li >
+                                <a href="../web_Bookmarks/">书签</a>
+                            </li>
+                            <li >
+                                <a href="../Linux_screen_alias/">screen | alias命令</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Linux历史命令</a>
+                            </li>
+                            <li >
+                                <a href="../LINUX_HELP/">Linux获取帮助</a>
+                            </li>
+                            <li >
+                                <a href="../Bash_Keywords/">Linux_BASH 快捷键</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Linux_screen_alias/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../LINUX_HELP/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">一、命令行历史</a></li>
+        <li class="main "><a href="#history">二、HISTORY 命令</a></li>
+        <li class="main "><a href="#_2">三、命令历史相关环境变量</a></li>
+            <li><a href="#62">> 控制命令历史的记录方式</a></li>
+        <li class="main "><a href="#_3">重复前一个命令</a></li>
+        <li class="main "><a href="#_4">案例演示</a></li>
+        <li class="main "><a href="#_5">调用历史参数</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="_1">一、命令行历史</h2>
+<hr />
+<ul>
+<li>
+<p>保存你输入的命令历史。可以用它来重复执行命令</p>
+</li>
+<li>
+<p>登录shell时，会读取命令历史文件中记录下的命令 ~/.bash_history</p>
+</li>
+<li>
+<p>登录进shell后新执行的命令只会记录在缓存中；这些命令会在用户退出时"追加"至命令历史文件中</p>
+</li>
+</ul>
+<h2 id="history">二、HISTORY 命令</h2>
+<hr />
+<blockquote>
+<p>history [-c]  [-d offset]  [-n]</p>
+<p>history -anrw [filename]</p>
+<p>history -ps arg[arg...]</p>
+</blockquote>
+<p>​    -c  清除命令历史</p>
+<p>​    -d offset  删除历史中指定的第offset个命令</p>
+<p>​    n  显示最近的n条历史</p>
+<p>​    -a  追加本次会话执行的命令历史列表至历史文件</p>
+<p>​    -r  读取历史文件附加到历史列表</p>
+<p>​    -w  保存历史列表到指定的历史文件</p>
+<p>​    -n  读历史文件中未读过的行至历史列表</p>
+<p>​    -p  展开历史参数成多行,但不存在历史列表中</p>
+<p>​    -s  展开历史参数成一行,附加到历史列表后</p>
+<h2 id="_2">三、命令历史相关环境变量</h2>
+<ul>
+<li>
+<p>HISTSIZE 命令历史记录的条数</p>
+</li>
+<li>
+<p>HISTFILE 指定历史文件，默认为 ~/.bash_history</p>
+</li>
+<li>
+<p>HISTFILESIE 命令历史文件记录历史的条数</p>
+</li>
+<li>
+<p>HISTTIMEFORMAT = " %F %T "  显示时间</p>
+</li>
+<li>
+<p>HISTIGNORE = "str1 : str2* ..."  忽略str1命令，str2开头的历史命令</p>
+</li>
+</ul>
+<h4 id="62">> 控制命令历史的记录方式</h4>
+<ul>
+<li>环境变量: <strong>HISTCONTROL</strong> —— [ ignoredups：默认，忽略重复的命令，连续且相同的命令为“重复”  ignorespace：忽略所有以空格开头的命令  ignoreboth：相当于 ignoredups、ignorespace的结合  erasedups：删除重复的命令 ]</li>
+<li>控制方式 <strong>export</strong> 变量名=“值”</li>
+<li>存放文件 —— /etc/profile | ~/.bash_profile</li>
+</ul>
+<p><img alt="HISTCONTROL" src="../img/history_HISTCONTROL.png" /></p>
+<h2 id="_3">重复前一个命令</h2>
+<hr />
+<p>​ ▶ 使用上方向键，并回车执行</p>
+<p>​ ▶ <strong>!!</strong> 并回车执行</p>
+<p>​ ▶ 输入 <strong>! -1</strong> 并回车执行</p>
+<p>​ ▶ <strong>Ctrl + P</strong> 并回车执行</p>
+<h2 id="_4">案例演示</h2>
+<hr />
+<ol>
+<li>使用<strong><em>上 下</em></strong> 方向键上下浏览从前输入的命令</li>
+<li>!:0__ 执行前一条命令[去除参数]</li>
+<li><strong>Ctrl + R</strong> 在历史记录中搜索命令[ <strong>Ctrl + G</strong> 退出历史搜索模式]</li>
+<li><strong>Ctrl + J</strong> 执行当前命令</li>
+<li><strong>! n</strong> 执行history命令输出对于n的命令</li>
+<li><strong>! - n</strong> 执行history历史中倒数第n个命令</li>
+</ol>
+<h2 id="_5">调用历史参数</h2>
+<hr />
+<ol>
+<li><strong>!$ | [Esc, . —— 点击Esc键后松开，再点击. 键] | Alt + .</strong>   重新调用前一个命令中的最后一个参数</li>
+<li>__command !^ | !$ | !* | !:n__利用上一个命令的第一个参数 | 最后一个参数 | 全部参数 | 第n个参数 做command的参数</li>
+<li>__command !n:^ | !n:$ | !n:m | !n:* __调用第n条命令的第一个参数 | 最后一个参数 | 第m个参数 | 所有参数</li>
+<li>__command !string:^ | !string:$ | !string:n | !string:* __从命令历史中搜索以string开头的命令，并获取其第一个参数 | 最后一个参数 | 第n个参数 | 所有参数</li>
+</ol></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

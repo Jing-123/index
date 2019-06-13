@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书签导航栏</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 5px;
+        }
+        .container{
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 15px;
+        }
+        .content{
+            float: left;
+            text-align: center;
+            height: 60px;
+            width: 120px;
+            margin: 8px 5px 0 3px;
+            border-radius: 5px;
+            border: 1px solid #D3D3D3;
+            background-color: snow;
+            box-shadow: 1px 1px 5px gray;
+            transition: .5s;
+        }
+        a{
+            cursor: url("img/flower_rose_48px_520500_easyicon.net.png"),default;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            line-height: 60px;
+            font-weight: bold;
+        }
+        .content:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false' onmouseup='document.selection.empty()'>
+    <div class="container">
+        <div id="title">
+            <img src="img/bookmark_for_myself2.png" width="100%" height="auto">
+        </div>
+        <div class="content"><a href="website/Web_design.html">前端设计</a></div>
+        <div class="content"><a href="website/Programming_learning.html">编程学习</a></div>
+        <div class="content"><a href="website/computers.html">计算机相关</a></div>
+        <div class="content"><a href="website/multimedia.html">多媒体内容</a></div>
+        <div class="content"><a href="website/GNU_Linux.html">GNU/Linux</a></div>
+        <div class="content"><a href="website/Picture%20wallpaper.html">壁纸|图片</a></div>
+        <div class="content"><a href="website/UC_Bookmarks_2018_3_20.html">UC书签备份</a></div>
+        <div class="content"><a href="website/resume/resume.html">个人信息</a></div>
+    </div>
+</body>
+</html>

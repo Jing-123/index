@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Positioning of elements</title><link href='http://fonts.googleapis.com/css?family=Roboto+Mono:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #eee8d5; --text-color: #839496; --item-hover-bg-color: #eee8d5; --window-border: 1px solid #93a1a1; --active-file-bg-color: #fdf6e3; --active-file-text-color: #93a1a1; --item-hover-text-color: #93a1a1; }
+@font-face { font-family: Mononoki; font-style: normal; font-weight: normal; src: local("Mononoki Regular"), url("./solarized/mononoki-regular.woff") format("woff"); }
+@font-face { font-family: Mononoki; font-style: italic; font-weight: normal; src: local("Mononoki Italic"), url("./solarized/mononoki-italic.woff") format("woff"); }
+@font-face { font-family: Mononoki; font-style: normal; font-weight: bold; src: local("Mononoki Bold"), url("./solarized/mononoki-bold.woff") format("woff"); }
+@font-face { font-family: Mononoki; font-style: italic; font-weight: bold; src: local("Mononoki Bold Italic"), url("./solarized/mononoki-bolditalic.woff") format("woff"); }
+html { font-size: 16px; }
+body { font-family: Consolas, Mononoki, "Roboto Sans", "Liberation Mono", monospace; color: rgb(88, 110, 117); line-height: 1.6; background-color: rgb(253, 246, 227); }
+#write { max-width: 860px; margin: 0px auto; padding: 20px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+body > :first-child { margin-top: 0px !important; }
+body > :last-child { margin-bottom: 0px !important; }
+a { color: rgb(38, 139, 210); }
+a:hover { color: rgb(203, 75, 22); }
+.md-toc-inner { color: rgb(147, 161, 161) !important; }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: normal; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 232, 213); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 232, 213); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, ul, ol, dl, table { margin: 0.8em 0px; }
+blockquote { margin: 1.6em 3.2em; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 1px; padding: 0px; margin: 24px 0px; background-color: rgb(238, 232, 213); border-width: 0px 0px 1px; border-style: none none solid; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; overflow: hidden; box-sizing: content-box; border-bottom-color: rgb(238, 232, 213); }
+body > h2:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child { margin-top: 0px; padding-top: 0px; }
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p { margin-top: 0px; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(181, 137, 0); padding: 0px 15px; color: rgb(147, 161, 161); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(204, 204, 204); margin: 0px; padding: 0px; }
+table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); }
+.md-fences, code, tt { background-color: rgb(238, 232, 213); color: rgb(203, 75, 22); border-radius: 3px; font-family: Consolas, Mononoki, "Roboto Mono", "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.task-list { padding-left: 0px; }
+.task-list-item { padding-left: 32px; }
+.task-list-item input { top: 3px; left: 8px; }
+@media screen and (min-width: 914px) {
+}
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(238, 232, 213); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; font-family: Consolas, Mononoki, "Roboto Mono", "Liberation Mono", Courier, monospace; padding: 8px 16px; font-size: 0.9em; color: inherit; }
+.md-tag { color: inherit; }
+.md-toc { margin-top: 10px; padding-bottom: 10px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { background-color: rgb(238, 232, 213); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+#md-notification::before { top: 10px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: Consolas, Mononoki, "Roboto Mono", "Liberation Mono", monospace; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+
+
+
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h2><a name='header-n0' class='md-header-anchor '></a>元素的定位</h2><p>————<strong>边偏移</strong></p><figure><table><thead><tr><th>边偏移属性</th><th>描述</th></tr></thead><tbody><tr><td>top</td><td>顶端偏移量，定义元素对于其父元素上边框的距高</td></tr><tr><td>bottom</td><td>底部偏移量，定义元素对于其父元素下边框的距高</td></tr><tr><td>left</td><td>z左侧偏移量，定义元素对于其父元素左边框的距高</td></tr><tr><td>right</td><td>右侧偏移量，定义元素对于其父元素右边框的距高</td></tr></tbody></table></figure><p><strong>定位与边偏移可搭配使用 ———— top:30px; left:20px;</strong></p><p>————<strong>定位模式[定位的分类]</strong></p><blockquote><p>{position: 属性值; }</p></blockquote><figure><table><thead><tr><th>值</th><th>描述</th></tr></thead><tbody><tr><td>static</td><td>自动定位[默认方式]</td></tr><tr><td>relative</td><td>相对定位，相对于其原文档流的位置进行定位</td></tr><tr><td>absolute</td><td>绝对定位，相对于其上一个已经定位的元素进行定位</td></tr><tr><td>fixed</td><td>固定定位，相对于浏览器窗口进行定位</td></tr></tbody></table></figure><h3><a name='header-n39' class='md-header-anchor '></a>1.1 静态定位[static]</h3><p>静态定位是所有元素的默认定位方式，当position属性顶端取值为static时，可以将元素定位于静态位置。所谓静态位置就是各个元素在HTML文档流中的默认位置。</p><p>————网页中的所有元素默认均为静态定位，即是标准流的特性。</p><p>————静态定位模式下，无法使用边偏移属性[top、bottom、left、right]来改变元素位置</p><h3><a name='header-n43' class='md-header-anchor '></a>1.2 相对定位[relative]————自恋型</h3><p>相对定位是将元素相对于它在标准流中的位置进行定位，当position属性的取值为relative时，可以将元素定位于相对位置。</p><p>————对元素设置相对定位后，可以通过边偏移属性改变元素的位置，但是它在文档流中的位置仍然保留</p><p><img src='./relative.png' alt='' referrerPolicy='no-referrer' /></p><p>————<strong>注意</strong> 1. 相对定位最重要的一点是，它可以通过边偏移位置，但是原来所占的位置将继续占有；</p><p><span>	</span>2. 其次，每次移动的位置，是以自己的左上角为基点移动[相对于自己来移动位置]</p><p><strong>[相对定位的盒子中仍然在标准流中，它后面的盒子仍以标准流对待它]————相对定位不脱标</strong></p><h3><a name='header-n50' class='md-header-anchor '></a>1.3 绝对定位[absolute]————拼爹型</h3><p><strong>[注意]</strong> 1. 如果文档可滚动，绝对定位元素会随着它滚动，因为元素最终会相对于正常流的某一部分定位。当position属性的取值为absolute时，可以将元素的定位模式设置为绝对定位。</p><p><span>	</span><strong>绝对定位————可以通过边偏移移动位置，但是它是完全脱标，完全不占标准流的位置</strong></p><h4><a name='header-n53' class='md-header-anchor '></a>1.3.1 父级没有定位</h4><p>————若所有父级元素均没有定位，则以浏览器为准对齐[document文档]</p><p><img src='./absolute.png' alt='' referrerPolicy='no-referrer' /></p><h4><a name='header-n56' class='md-header-anchor '></a>1.3.2 父级有定位</h4><p>————绝对定位将元素依据最近的已经定位[绝对、固定、相对定位]的父元素[祖先]进行定位</p><p><img src='./absolute2.png' alt='' referrerPolicy='no-referrer' /></p><h4><a name='header-n59' class='md-header-anchor '></a>1.3.3 子 <font size=6px;>绝</font> 父 <font size=6px;>相</font></h4><p>————意思：子级是绝对定位，父级使用相对定位</p><p>    绝对定位是将元素依据最近的已经定位[绝对、固定、相对定位]的父元素[祖先]进行定位。即子级是绝对定位，父亲只要是定位即可[不管父亲是绝对定位还是相对定位，甚至是固定定位都可以]，就是说————子绝父绝，子绝父相，都是正确的。</p><p>————[<strong>子绝父相的由来</strong>]由以下案例：因为子级是绝对定位，不会占用位置，可以放到父盒子的任意位置。父盒子布局时，需要占有位置，因此只能是相对定位。</p><blockquote><p>[案例1]利用<strong>子绝父相</strong>构建层叠边角</p></blockquote><p><img src='./absolute relative.png' alt='' referrerPolicy='no-referrer' /></p><h4><a name='header-n66' class='md-header-anchor '></a>1.3.4 绝对定位的盒子水平/垂直居中</h4><p>定位盒子设置水平居中/垂直居中算法：</p><p><span>	</span>1. 首先left:50% ————子元素相对父元素移动</p><p><span>	</span>2. 然后再走自己外边距负50%即可</p><p><img src='./relative2.png' alt='' referrerPolicy='no-referrer' /></p><h3><a name='header-n71' class='md-header-anchor '></a>1.4 固定定位[fixed]————认死理型</h3><p>固定定位是绝对定位的一种特殊形式，类似于正方形是特殊的矩形。它是以浏览器窗口作为参照物来定义网页元素。当position属性的取值为fixed时，即可将元素的定位模式设置为固定定位。</p><p>当对元素设置固定定位后，它将脱离标准文档流的控制，始终依据浏览器窗口来定义自己的位置。不管浏览器滚动条如何滚动也不管浏览器窗口的大小如何变化，该元素都会始终显示在浏览器窗口的固定位置。</p><hr /><p>固定定位：</p><p><span>	</span>1. 固定定位的元素跟父亲没有任何关系，只认浏览器；</p><p><span>	</span>2. 固定定位完全脱标，不占有位置，不随这滚动条滚动。</p><blockquote><p>[案例2]使用固定定位固定导航栏案例</p></blockquote><p><img src='./fixed2.gif' alt='' referrerPolicy='no-referrer' /></p><h3><a name='header-n81' class='md-header-anchor '></a>1.5 层叠次序[z-index]</h3><p>当对多个元素同时设置定位时，定位元素又可能发生重叠</p><p><img src='./z_index.png' alt='' referrerPolicy='no-referrer' /></p><p>————在CSS中，若想要调整重叠元素的堆叠顺序，可以对定位元素应用<strong>z-index</strong>层叠等属性，其值可为正整数、0、负整数</p><p><strong>[注意]</strong></p><p><span>	</span>1.z-index的默认属性值为0，取值越大，定位元素在层叠元素中越居上；
+ <span>	</span>2.如果取值相同，则根据书写顺序，后来者居上；
+ <span>	</span>3.后面数字一定不能加单位；
+​<span>	</span>4.只有相对定位、绝对定位、固定定位有此属性，其余标准流、浮动、静态定位均无此属性，亦不可使用此属性。</p><h3><a name='header-n87' class='md-header-anchor '></a>1.6 四种定位模式的总结</h3><figure><table><thead><tr><th>定位模式</th><th>是否脱标占有位置</th><th>是否可使用边偏移</th><th>移动位置基准</th></tr></thead><tbody><tr><td>静态定位static</td><td>不脱标，正常模式</td><td>不可以</td><td>正常模式</td></tr><tr><td>相对定位relative</td><td>不脱标，占有位置</td><td>可以</td><td>相对自身位置移动</td></tr><tr><td>绝对定位absolute</td><td>完全脱标，不占有位置</td><td>可以</td><td>相对于定位父级移动位置</td></tr><tr><td>固定定位fixed</td><td>完全脱标，不占有位置</td><td>可以</td><td>相对于浏览器移动位置</td></tr></tbody></table></figure><h4><a name='header-n114' class='md-header-anchor '></a>1.6.1 定位模式的转换</h4><p>    跟浮动一样，元素添加了绝对定位和固定定位之后，元素模式也会发生转换。都转换为行内块模式。因此，如行内元素添加了绝对定位或固定定位后，可以不用转换模式，直接给宽和高即可。</p><h3><a name='header-n116' class='md-header-anchor '></a>1.7 元素的隐藏与显示</h3><p>    在CSS中有三个显示和隐藏的单词比较常见，我们要区分开，他们分别是display、visibility、overflow。</p><p>    他们的主要目的是让一个元素在页面中消失，但是不在文档源码中删除。、</p><h4><a name='header-n119' class='md-header-anchor '></a>1.7.1 display显示</h4><p>display设置或检索对象是否显示和如何显示</p><p>display: none[隐藏对象]，与之相反的是display：block除了转换为块级元素之外，同时还有显示元素的意思。</p><p>特点：隐藏之后，不在保留位置</p><h4><a name='header-n123' class='md-header-anchor '></a>1.7.2 visibility可见性</h4><p>设置或检索是否显示对象</p><p>visibility：visible 对象可视</p><p>visibility：hidden 对象隐藏</p><p>特定：隐藏之后，继续保留原有位置[停职留薪]</p><h4><a name='header-n128' class='md-header-anchor '></a>1.7.3 overflow溢出</h4><p>检索或设置当前对象的内容超过其指定高度及宽度时如何管理内容</p><p>overflow：visible 不剪切内容也不添加滚动条</p><p>overflow：auto 超出自动显示滚动条，不超出不显示滚动条</p><p>overflow：hidden 不显示超过对象尺寸的内容，超出的部分隐藏</p><p>overflow：scroll 不管超出内容否，总是显示滚动条</p></div>
+</body>
+</html>
